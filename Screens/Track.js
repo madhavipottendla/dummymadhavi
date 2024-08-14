@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Dimensions, Animated, ScrollView,TouchableOpaci
 import Header from './Header';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const { height } = Dimensions.get('window');
 
@@ -32,13 +34,21 @@ const ComplaintTrackingScreen = () => {
   return (
     <View>
     <Header />
-    <View style = {{padding :15,borderWidth:0,width:370,marginTop:20,marginLeft:10,borderRadius:17,elevation:1,
+    <View style = {{padding:20,borderWidth:0,width:350,marginTop:20,marginLeft:7,borderRadius:17,elevation:1,
       backgroundColor:"white",marginHorizontal:50
     }}>
     <Text style = {{fontWeight:'700',fontSize:30}}>Complaint Tracker</Text>
-    <Text style = {{fontWeight:'700',fontSize:20}} >Complaint Id:PRKOOO9987</Text>
-    <Text style = {{fontWeight:'700',fontSize:20}} >Name:Prabhas</Text>
-    <Text style = {{fontWeight:'700',fontSize:20}} >Complaint Type:A4 Violation</Text>
+    <View>
+      <Text style={{ fontWeight: '400', fontSize: 18 }}>
+        <Icon name="id-card" size={20} /> : PRKOOO9987
+      </Text>
+      <Text style={{ fontWeight: '400', fontSize: 18 ,marginLeft:8}}>
+        <Icon name="user" size={20} /> : Prabhas
+      </Text>
+      <Text style={{ fontWeight: '400', fontSize: 20,marginLeft:3, }}>
+        <Entypo style ={{}} name="shop" size={20} /> :A4 violation
+      </Text>
+    </View>
     </View>
     <View style={styles.container}>
    
@@ -136,7 +146,7 @@ const styles = StyleSheet.create({
 },
 iconContainer: {
     position: 'absolute',
-    top: 10, 
+    // top: 10, 
     right: 10, 
     padding: 10,
     backgroundColor: 'white', 
